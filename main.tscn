@@ -1,0 +1,454 @@
+[gd_scene format=3 uid="uid://cpr4wpc5rofdg"]
+
+[ext_resource type="Script" uid="uid://b1tidkn7tk0ea" path="res://scripts/main.gd" id="1_h2yge"]
+[ext_resource type="Texture2D" uid="uid://c4g68gjonll64" path="res://assets/images/literalsoofa_ps_icon.png" id="1_ig7tw"]
+[ext_resource type="StyleBox" uid="uid://ullk06b2fa4i" path="res://styles/project_style_box_flat.tres" id="2_0xm2m"]
+[ext_resource type="Script" uid="uid://cl7bg5ra1p45p" path="res://addons/ya3/animators/control_animators/scale_animator.gd" id="3_kek77"]
+[ext_resource type="Texture2D" uid="uid://q35wjgawyyqw" path="res://assets/icons/google-play.png" id="4_1bvp3"]
+[ext_resource type="Script" uid="uid://8xy6hfhxmqgl" path="res://addons/ya3/animators/control_animators/rotation_animator.gd" id="4_4c57u"]
+[ext_resource type="Texture2D" uid="uid://uoejjqw7q8aa" path="res://assets/icons/godot-asset-store.png" id="5_lquwl"]
+[ext_resource type="Texture2D" uid="uid://drhv8sm38m4ts" path="res://assets/icons/github.png" id="6_7mycd"]
+[ext_resource type="Texture2D" uid="uid://cw8e3mekj7x67" path="res://assets/icons/mail.png" id="7_272bh"]
+[ext_resource type="Texture2D" uid="uid://bjev7h63hwk0l" path="res://assets/icons/discord.png" id="8_5vw27"]
+
+[sub_resource type="Gradient" id="Gradient_0xm2m"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_04qrn"]
+gradient = SubResource("Gradient_0xm2m")
+
+[node name="Control" type="Control" unique_id=984180613]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_h2yge")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=383237579]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=19842986]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
+scroll_hint_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer" unique_id=1094390526]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="TopPadding" type="Control" parent="ScrollContainer/VBoxContainer" unique_id=1801730353]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/VBoxContainer" unique_id=666813210]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+texture = ExtResource("1_ig7tw")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ScaleAnimator" type="Node" parent="ScrollContainer/VBoxContainer/TextureRect" unique_id=1851090049]
+script = ExtResource("3_kek77")
+scale_after = Vector2(2, 2)
+transition_type = 9
+play_on_ready = true
+metadata/_custom_type_script = "uid://cl7bg5ra1p45p"
+
+[node name="RotationAnimator" type="Node" parent="ScrollContainer/VBoxContainer/TextureRect" unique_id=192265068]
+script = ExtResource("4_4c57u")
+rotation_after = 6.284
+transition_type = 11
+play_on_ready = true
+metadata/_custom_type_script = "uid://8xy6hfhxmqgl"
+
+[node name="Control6" type="Control" parent="ScrollContainer/VBoxContainer" unique_id=1267779453]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer" unique_id=1845079572]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Hi, I'm LiteralSoofa."
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="ScrollContainer/VBoxContainer" unique_id=1255829131]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "I'm a software engineer and game developer interested in gameplay programming, tools and interactive systems. "
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/VBoxContainer" unique_id=155742605]
+layout_mode = 2
+alignment = 1
+
+[node name="LinkButton" type="LinkButton" parent="ScrollContainer/VBoxContainer/HBoxContainer" unique_id=1706663382]
+layout_mode = 2
+text = "GitHub"
+uri = "https://github.com/LiteralSoofa"
+
+[node name="LinkButton2" type="LinkButton" parent="ScrollContainer/VBoxContainer/HBoxContainer" unique_id=354405164]
+layout_mode = 2
+text = "LinkedIn"
+uri = "https://www.linkedin.com/in/emre-cebeci-6a063033a/"
+
+[node name="Control2" type="Control" parent="ScrollContainer/VBoxContainer" unique_id=1637986233]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="ScrollContainer/VBoxContainer" unique_id=1743856833]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Projects"
+horizontal_alignment = 1
+
+[node name="Control3" type="Control" parent="ScrollContainer/VBoxContainer" unique_id=363826111]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="ScrollContainer/VBoxContainer" unique_id=1251397030]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="ScrollContainer/VBoxContainer/HBoxContainer2" unique_id=844947167]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ScrollContainer2" type="ScrollContainer" parent="ScrollContainer/VBoxContainer/HBoxContainer2" unique_id=1137778606]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
+theme_override_colors/scroll_hint_horizontal_color = Color(0, 0, 0, 1)
+theme_override_icons/scroll_hint_horizontal = SubResource("GradientTexture2D_04qrn")
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 0
+scroll_hint_mode = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/VBoxContainer/HBoxContainer2/ScrollContainer2" unique_id=1337110981]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="ProjectCard1" type="PanelContainer" parent="ScrollContainer/VBoxContainer/HBoxContainer2/ScrollContainer2/HBoxContainer" unique_id=1919984997]
+custom_minimum_size = Vector2(320, 200)
+custom_maximum_size = Vector2(320, 200)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("2_0xm2m")
+
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer/VBoxContainer/HBoxContainer2/ScrollContainer2/HBoxContainer/ProjectCard1" unique_id=2076952337]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/HBoxContainer2/ScrollContainer2/HBoxContainer/ProjectCard1/MarginContainer" unique_id=1110850835]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Title" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer2/ScrollContainer2/HBoxContainer/ProjectCard1/MarginContainer/VBoxContainer" unique_id=558322279]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Parcel"
+horizontal_alignment = 1
+
+[node name="Desc" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer2/ScrollContainer2/HBoxContainer/ProjectCard1/MarginContainer/VBoxContainer" unique_id=1792995847]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3529412, 0.3529412, 0.3529412, 1)
+theme_override_font_sizes/font_size = 16
+text = "A fast-paced chain game where every last letter shapes the next word."
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/VBoxContainer/HBoxContainer2/ScrollContainer2/HBoxContainer/ProjectCard1/MarginContainer/VBoxContainer" unique_id=229864810]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+size_flags_vertical = 10
+alignment = 1
+
+[node name="LinkButton" type="LinkButton" parent="ScrollContainer/VBoxContainer/HBoxContainer2/ScrollContainer2/HBoxContainer/ProjectCard1/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1055350224]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+uri = "https://play.google.com/store/apps/details?id=com.literalsoofa.parcel"
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer2/ScrollContainer2/HBoxContainer/ProjectCard1/MarginContainer/VBoxContainer/HBoxContainer/LinkButton" unique_id=531213426]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_1bvp3")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ProjectCard2" type="PanelContainer" parent="ScrollContainer/VBoxContainer/HBoxContainer2/ScrollContainer2/HBoxContainer" unique_id=953844342]
+custom_minimum_size = Vector2(320, 200)
+custom_maximum_size = Vector2(320, 200)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("2_0xm2m")
+
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer/VBoxContainer/HBoxContainer2/ScrollContainer2/HBoxContainer/ProjectCard2" unique_id=1275209571]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/HBoxContainer2/ScrollContainer2/HBoxContainer/ProjectCard2/MarginContainer" unique_id=1508799350]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Title" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer2/ScrollContainer2/HBoxContainer/ProjectCard2/MarginContainer/VBoxContainer" unique_id=1163951974]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Little Logistics"
+horizontal_alignment = 1
+
+[node name="Desc" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer2/ScrollContainer2/HBoxContainer/ProjectCard2/MarginContainer/VBoxContainer" unique_id=649504623]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3529412, 0.3529412, 0.3529412, 1)
+theme_override_font_sizes/font_size = 16
+text = "A work in progress small cargo sorting game developing in Unity Engine."
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/VBoxContainer/HBoxContainer2/ScrollContainer2/HBoxContainer/ProjectCard2/MarginContainer/VBoxContainer" unique_id=81546649]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+size_flags_vertical = 10
+alignment = 1
+
+[node name="ProjectCard3" type="PanelContainer" parent="ScrollContainer/VBoxContainer/HBoxContainer2/ScrollContainer2/HBoxContainer" unique_id=1332476877]
+custom_minimum_size = Vector2(320, 200)
+custom_maximum_size = Vector2(320, 200)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("2_0xm2m")
+
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer/VBoxContainer/HBoxContainer2/ScrollContainer2/HBoxContainer/ProjectCard3" unique_id=750766457]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/HBoxContainer2/ScrollContainer2/HBoxContainer/ProjectCard3/MarginContainer" unique_id=1090537086]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Title" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer2/ScrollContainer2/HBoxContainer/ProjectCard3/MarginContainer/VBoxContainer" unique_id=607208959]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Scrappy"
+horizontal_alignment = 1
+
+[node name="Desc" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer2/ScrollContainer2/HBoxContainer/ProjectCard3/MarginContainer/VBoxContainer" unique_id=275350798]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3529412, 0.3529412, 0.3529412, 1)
+theme_override_font_sizes/font_size = 16
+text = "A work in progress survival-RPG game developing with UE5.
+
+This project earned TUBITAK 2209-A  support. "
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/VBoxContainer/HBoxContainer2/ScrollContainer2/HBoxContainer/ProjectCard3/MarginContainer/VBoxContainer" unique_id=918551339]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+size_flags_vertical = 10
+alignment = 1
+
+[node name="ProjectCard4" type="PanelContainer" parent="ScrollContainer/VBoxContainer/HBoxContainer2/ScrollContainer2/HBoxContainer" unique_id=1144614940]
+custom_minimum_size = Vector2(320, 200)
+custom_maximum_size = Vector2(320, 200)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("2_0xm2m")
+
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer/VBoxContainer/HBoxContainer2/ScrollContainer2/HBoxContainer/ProjectCard4" unique_id=951663048]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/HBoxContainer2/ScrollContainer2/HBoxContainer/ProjectCard4/MarginContainer" unique_id=1560540118]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Title" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer2/ScrollContainer2/HBoxContainer/ProjectCard4/MarginContainer/VBoxContainer" unique_id=451997183]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "YA3 - Yet Another Animation Library"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Desc" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer2/ScrollContainer2/HBoxContainer/ProjectCard4/MarginContainer/VBoxContainer" unique_id=157755444]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3529412, 0.3529412, 0.3529412, 1)
+theme_override_font_sizes/font_size = 16
+text = "An animation library built for Godot: Includes 3D, 2D and UI animations."
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/VBoxContainer/HBoxContainer2/ScrollContainer2/HBoxContainer/ProjectCard4/MarginContainer/VBoxContainer" unique_id=407826460]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+size_flags_vertical = 10
+alignment = 1
+
+[node name="LinkButton" type="LinkButton" parent="ScrollContainer/VBoxContainer/HBoxContainer2/ScrollContainer2/HBoxContainer/ProjectCard4/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1757913697]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+uri = "https://store.godotengine.org/asset/literalsoofa/ya3-yet-another-animation-addon/"
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer2/ScrollContainer2/HBoxContainer/ProjectCard4/MarginContainer/VBoxContainer/HBoxContainer/LinkButton" unique_id=520019085]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_lquwl")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ProjectCard5" type="PanelContainer" parent="ScrollContainer/VBoxContainer/HBoxContainer2/ScrollContainer2/HBoxContainer" unique_id=1143398217]
+custom_minimum_size = Vector2(320, 200)
+custom_maximum_size = Vector2(320, 200)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("2_0xm2m")
+
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer/VBoxContainer/HBoxContainer2/ScrollContainer2/HBoxContainer/ProjectCard5" unique_id=67589672]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/HBoxContainer2/ScrollContainer2/HBoxContainer/ProjectCard5/MarginContainer" unique_id=1621305884]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Title" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer2/ScrollContainer2/HBoxContainer/ProjectCard5/MarginContainer/VBoxContainer" unique_id=1184791854]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "TShock Plugins"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Desc" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer2/ScrollContainer2/HBoxContainer/ProjectCard5/MarginContainer/VBoxContainer" unique_id=1142248020]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3529412, 0.3529412, 0.3529412, 1)
+theme_override_font_sizes/font_size = 16
+text = "15+ published plugins built with C# and .NET for Terraria, used by several public servers worldwide."
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/VBoxContainer/HBoxContainer2/ScrollContainer2/HBoxContainer/ProjectCard5/MarginContainer/VBoxContainer" unique_id=523544324]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+size_flags_vertical = 10
+alignment = 1
+
+[node name="LinkButton" type="LinkButton" parent="ScrollContainer/VBoxContainer/HBoxContainer2/ScrollContainer2/HBoxContainer/ProjectCard5/MarginContainer/VBoxContainer/HBoxContainer" unique_id=692237053]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+uri = "https://github.com/LiteralSoofa/TShockPlugins"
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer2/ScrollContainer2/HBoxContainer/ProjectCard5/MarginContainer/VBoxContainer/HBoxContainer/LinkButton" unique_id=1906328406]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_7mycd")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Control2" type="Control" parent="ScrollContainer/VBoxContainer/HBoxContainer2" unique_id=783703795]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Control5" type="Control" parent="ScrollContainer/VBoxContainer" unique_id=851547844]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="Label4" type="Label" parent="ScrollContainer/VBoxContainer" unique_id=1728983202]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Contact"
+horizontal_alignment = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="ScrollContainer/VBoxContainer" unique_id=746126230]
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="LinkButton" type="LinkButton" parent="ScrollContainer/VBoxContainer/HBoxContainer3" unique_id=2057605097]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+uri = "mailto:emrecebeci504@gmail.com"
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer3/LinkButton" unique_id=1093716855]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_272bh")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="LinkButton2" type="LinkButton" parent="ScrollContainer/VBoxContainer/HBoxContainer3" unique_id=178360629]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+uri = "https://discord.com/users/292672828233482250"
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer3/LinkButton2" unique_id=315268285]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_5vw27")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Control4" type="Control" parent="ScrollContainer/VBoxContainer" unique_id=707261833]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Label5" type="Label" parent="ScrollContainer/VBoxContainer" unique_id=1439294998]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "© 2026 LiteralSoofa"
+horizontal_alignment = 1
+
+[node name="BottomPadding" type="Control" parent="ScrollContainer/VBoxContainer" unique_id=1969814045]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
